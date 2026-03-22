@@ -1,23 +1,25 @@
+import { Link } from 'react-router-dom'
+import questbook from '../assets/questbooklogo.png'
 
 function NavBar() {
   return (
-    <nav class="navbar navbar-expand-sm bg-light navbar-light">
-      <div class="container-fluid">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Active</a>
+    <nav className="navbar navbar-expand-sm bg-light navbar-light">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/">
+      <img src={questbook} alt="QuestBook" height="80" />
+    </Link>
+     <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link className="nav-link" to="/">Dashboard</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/questboard">QuestBoard</Link>
+        </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/create-quest">Create Quest</Link>
       </li>
-     <li class="nav-item">
-        <a class="nav-link" href="#">Dashboard</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">QuestBoard</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Create Quest</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Logout</a>
+      <li className="nav-item">
+        <Link className="nav-link" to="/logout">Logout</Link>
       </li>
     </ul>
   </div>

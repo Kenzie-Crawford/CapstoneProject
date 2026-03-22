@@ -1,16 +1,21 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
+import NavBar from './Components/Navbar'
+import HomePage from './Pages/Homepage'
 
 function App() {
   
 
   return (
-    <>
-      <button className="btn btn-success">Test Button</button>
-    </>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/questboard" element={<h1>QuestBoard</h1>} />
+        <Route path="/create-quest" element={<h1>Create Quest</h1>} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
