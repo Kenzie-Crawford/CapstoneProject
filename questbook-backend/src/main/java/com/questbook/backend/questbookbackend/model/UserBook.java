@@ -80,19 +80,19 @@ public class UserBook {
         this.userRating = userRating;
     }
 
-    public LocalDateTime getStartedAt() {
+    public LocalDate getStartedAt() {
         return startedAt;
     }
 
-    public void setStartedAt(LocalDateTime startedAt) {
+    public void setStartedAt(LocalDate startedAt) {
         this.startedAt = startedAt;
     }
 
-    public LocalDateTime getFinishedAt() {
+    public LocalDate getFinishedAt() {
         return finishedAt;
     }
 
-    public void setFinishedAt(LocalDateTime finishedAt) {
+    public void setFinishedAt(LocalDate finishedAt) {
         this.finishedAt = finishedAt;
     }
 
