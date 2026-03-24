@@ -30,6 +30,23 @@ public class Review {
     @Column (name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
 
+    public Review() {
+
+    }
+
+    public Review(User user, Book book, int rating) {
+        this.user = user;
+        this.book = book;
+        this.rating = rating;
+    }
+
+    public Review(User user, Book book, int rating, String comment) {
+        this.user = user;
+        this.book = book;
+        this.rating = rating;
+        this.comment = comment;
+    }
+
     public int getId() {
         return id;
     }

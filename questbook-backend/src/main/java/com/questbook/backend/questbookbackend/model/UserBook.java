@@ -40,6 +40,22 @@ public class UserBook {
     @Column (name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
 
+    public UserBook(){
+
+    }
+
+    public UserBook(User user, Book book, String status, Integer userRating) {
+        this.user = user;
+        this.book = book;
+        this.status = status;
+        this.userRating = userRating;
+    }
+    public UserBook(User user, Book book, String status) {
+        this.user = user;
+        this.book = book;
+        this.status = status;
+    }
+
     public int getId() {
         return id;
     }
@@ -72,7 +88,7 @@ public class UserBook {
         this.status = status;
     }
 
-    public int getUserRating() {
+    public Integer getUserRating() {
         return userRating;
     }
 

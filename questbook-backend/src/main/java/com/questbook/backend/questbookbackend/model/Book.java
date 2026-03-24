@@ -38,6 +38,16 @@ public class Book {
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+public Book(){
+
+}
+    public Book(String openLibraryId, String title, String author, String genre, String source) {
+        this.openLibraryId = openLibraryId;
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+        this.source = source;
+    }
 
     public int getId() {
         return id;
