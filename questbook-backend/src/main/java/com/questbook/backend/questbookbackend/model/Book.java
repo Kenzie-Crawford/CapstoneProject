@@ -38,15 +38,29 @@ public class Book {
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-public Book(){
 
-}
+    public Book() {
+
+    }
+
     public Book(String openLibraryId, String title, String author, String genre, String source) {
         this.openLibraryId = openLibraryId;
         this.title = title;
         this.author = author;
         this.genre = genre;
         this.source = source;
+    }
+
+    @PrePersist
+    private void onCreate() {
+        LocalDateTime now = LocalDateTime.now();
+        createdAt = now;
+        updatedAt = now;
+    }
+
+    @PreUpdate
+    private void onUpdate() {
+        updatedAt = LocalDateTime.now();
     }
 
     public int getId() {

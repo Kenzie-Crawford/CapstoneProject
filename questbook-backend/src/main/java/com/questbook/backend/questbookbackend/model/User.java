@@ -26,6 +26,7 @@ public class User {
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
+     
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
@@ -41,6 +42,18 @@ public class User {
         this.email = email;
         this.password = password;
         this.role = role;
+    }
+
+    @PrePersist
+    private void onCreate() {
+        LocalDateTime now = LocalDateTime.now();
+        createdAt = now;
+        updatedAt = now;
+    }
+
+    @PreUpdate
+    private void onUpdate() {
+        updatedAt = LocalDateTime.now();
     }
 
     public int getId() {

@@ -56,6 +56,18 @@ public class UserBook {
         this.status = status;
     }
 
+    @PrePersist
+    private void onCreate() {
+        LocalDateTime now = LocalDateTime.now();
+        createdAt = now;
+        updatedAt = now;
+    }
+
+    @PreUpdate
+    private void onUpdate() {
+        updatedAt = LocalDateTime.now();
+    }
+
     public int getId() {
         return id;
     }

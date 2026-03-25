@@ -47,6 +47,18 @@ public class Review {
         this.comment = comment;
     }
 
+    @PrePersist
+    private void onCreate() {
+        LocalDateTime now = LocalDateTime.now();
+        createdAt = now;
+        updatedAt = now;
+    }
+
+    @PreUpdate
+    private void onUpdate() {
+        updatedAt = LocalDateTime.now();
+    }
+
     public int getId() {
         return id;
     }
